@@ -82,7 +82,7 @@ public class WebSecurityConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.addAllowedOrigin("http://localhost:3000");
+        configuration.addAllowedOrigin("https://catchtalent-app.azurewebsites.net");
         configuration.addAllowedMethod("*");
         configuration.addAllowedHeader("*");
 
