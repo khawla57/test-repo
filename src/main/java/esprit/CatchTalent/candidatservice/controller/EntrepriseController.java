@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/entreprise")
-@CrossOrigin(origins = "http://localhost:3000", maxAge = 3600 , allowCredentials="true")
+@CrossOrigin(origins = "https://catchtalent-app.azurewebsites.net", maxAge = 3600 , allowCredentials="true")
 public class EntrepriseController {
 
     private final EntrepriseService entrepriseService;

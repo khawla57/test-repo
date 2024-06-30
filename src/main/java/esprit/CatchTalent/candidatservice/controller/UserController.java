@@ -21,7 +21,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-@CrossOrigin(origins = "http://localhost:3000", maxAge = 3600 , allowCredentials="true")
+@CrossOrigin(origins = "https://catchtalent-app.azurewebsites.net", maxAge = 3600 , allowCredentials="true")
 @RestController
 @RequestMapping("/api/users")
 public class UserController {

@@ -33,7 +33,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 
-@CrossOrigin(origins = "http://localhost:3000", maxAge = 3600 , allowCredentials="true")
+@CrossOrigin(origins = "https://catchtalent-app.azurewebsites.net", maxAge = 3600 , allowCredentials="true")
 @RestController
 @RequestMapping(path = "api/candidat")
 public class CandidatController {
