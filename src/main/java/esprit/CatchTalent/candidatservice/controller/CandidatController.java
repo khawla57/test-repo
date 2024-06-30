@@ -81,7 +81,7 @@ public class CandidatController {
 		   return ResponseEntity.ok().body("New candidat has been saved with ID:" + id);
 	   }
 
-	   @CrossOrigin(origins = "http://localhost:3000")
+	   @CrossOrigin(origins = "https://catchtalent-app.azurewebsites.net")
 	   @PostMapping("addCandidatWithPj")
 	    public ResponseEntity<Candidat> ajouterCandidatAvecPieceJointe(@RequestPart Candidat candidat,
 			@RequestPart("file") MultipartFile file) {
