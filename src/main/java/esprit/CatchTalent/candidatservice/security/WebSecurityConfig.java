@@ -85,6 +85,7 @@ public class WebSecurityConfig {
         configuration.addAllowedOrigin("https://catchtalent-app.azurewebsites.net");
         configuration.addAllowedMethod("*");
         configuration.addAllowedHeader("*");
+        configuration.setAllowCredentials(true);
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", configuration);
