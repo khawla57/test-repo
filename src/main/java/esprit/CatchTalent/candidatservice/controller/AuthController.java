@@ -39,7 +39,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 
-@CrossOrigin(origins = "https://catchtalent-app.azurewebsites.net", maxAge = 3600 , allowCredentials="true")
+@CrossOrigin(origins = "https://catchtalent-app.azurewebsites.net", maxAge = 3600 , allowCredentials="true" ,allowedHeaders = "*")
 @RestController
 @RequestMapping("/api/auth")
 public class AuthController {
@@ -78,6 +78,7 @@ public class AuthController {
                 .body(new UserInfoResponse(userDetails.getId(),
                         userDetails.getUsername(),
                         userDetails.getEmail(),
+
                         roles));
     }
 
