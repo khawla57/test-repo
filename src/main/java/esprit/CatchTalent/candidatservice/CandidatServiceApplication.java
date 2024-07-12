@@ -24,7 +24,7 @@ import esprit.CatchTalent.candidatservice.service.CandidatService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-@Configuration(proxyBeanMethods = false)
+@Configuration
 @SpringBootApplication
 @ComponentScan(basePackages = {"esprit.CatchTalent.candidatservice"})
 @EnableConfigurationProperties({
@@ -42,10 +42,7 @@ public class CandidatServiceApplication {
 	public ModelMapper modelMapper() {
 		return new ModelMapper();
 	}
-	@Bean
-	public CookieSameSiteSupplier applicationCookieSameSiteSupplier() {
-		return CookieSameSiteSupplier.ofStrict();
-	}
+
 /*
 	@Bean
 	CommandLineRunner start(CandidatService candidatService, OffreService offreService , StatusRepository statusRepository) {
