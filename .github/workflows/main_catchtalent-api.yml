@@ -22,10 +22,10 @@ jobs:
           java-version: '17'
       - name: Build Project
         run: mvn clean install -DskipTests
-      - name: Upload Artifacct for deployment job
+      - name: Upload Artifact for deployment job
         uses: actions/upload-artifact@v3
         with:
-          name: springboot-example
+          name: candidat-service
           path: ${{ github.workspace }}/target/*.jar
   deploy:
     runs-on: ubuntu-latest
@@ -34,7 +34,7 @@ jobs:
       - name: Download Artifact from build job
         uses: actions/download-artifact@v3
         with:
-          name: springboot-example
+          name: candidat-service
       - name: Deploy to Azure App Service
         uses: azure/webapps-deploy@v3
         with:
