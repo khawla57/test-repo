@@ -1,12 +1,12 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
-
+# More GitHub Actions for Azure: https://github.com/Azure/actions
 
 name: Build and deploy JAR app to Azure Web App - catchtalent-api
 
 on:
   push:
     branches:
-      - master
+      - main
   workflow_dispatch:
 
 jobs:
@@ -37,12 +37,21 @@ jobs:
     environment:
       name: 'Production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+    permissions:
+      id-token: write #This is required for requesting the JWT
 
     steps:
       - name: Download artifact from build job
         uses: actions/download-artifact@v4
         with:
           name: java-app
+
+      - name: Login to Azure
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_A420F29532724B2E8D9FD7D75BD7A079 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_5B7B4F8074D94482B5959BCB5C0DC4DA }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_ADF293B04A2A460EBDC56CB1C7431D14 }}
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
@@ -51,4 +60,3 @@ jobs:
           app-name: 'catchtalent-api'
           slot-name: 'Production'
           package: '*.jar'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_61ABDA198F2F4F06B33046C8597AF816 }}
