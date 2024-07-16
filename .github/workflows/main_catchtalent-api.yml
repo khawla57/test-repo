@@ -32,11 +32,11 @@ jobs:
     needs: build
     steps:
       - name: Download Artifact from build job
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: springboot-example
       - name: Deploy to Azure App Service
-        uses: azure/webapps-deploy@v2
+        uses: azure/webapps-deploy@v3
         with:
           app-name: catchtalent-api
           publish-profile: ${{ secrets.azureWebAppPublishProfile }}
