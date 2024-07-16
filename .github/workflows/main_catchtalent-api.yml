@@ -23,7 +23,7 @@ jobs:
       - name: Build Project
         run: mvn clean install -DskipTests
       - name: Upload Artifacct for deployment job
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: springboot-example
           path: ${{ github.workspace }}/target/*.jar
