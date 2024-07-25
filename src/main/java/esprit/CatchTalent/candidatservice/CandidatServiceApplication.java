@@ -44,7 +44,7 @@ public class CandidatServiceApplication {
 	}
 	@Bean
 	public CookieSameSiteSupplier applicationCookieSameSiteSupplier() {
-		return CookieSameSiteSupplier.ofStrict();
+		return CookieSameSiteSupplier.ofNone();
 	}
 /*
 	@Bean
