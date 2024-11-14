@@ -133,7 +133,7 @@ public class CandidatController {
 		return ResponseEntity.ok().body(suiviCandidat);
 	}
 
-//   :::::::::::::::::::::::: GESTION DE PIECEJOINTE ::::::::::::::::::
+//   :::::::::::::::::::::::: GESTION DE PIECEJOINTE ::::::::::::::::::::::::
 
     @GetMapping("/{candidatId}/piecejoints")
     public ResponseEntity<List<PieceJointe> >getAllPieceJointeByCandidatId(@PathVariable(value = "candidatId") Integer candidatId) {
